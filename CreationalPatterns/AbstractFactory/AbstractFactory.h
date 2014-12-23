@@ -11,8 +11,7 @@
 #include <iostream>
 using namespace std;
 
-/*  declares an interface for a type of product object
- */
+/*  declares an interface for a type of product object */
 class AbstractProductA{
     public:
         AbstractProductA();
