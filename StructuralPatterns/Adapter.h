@@ -1,4 +1,4 @@
-/*  Adaptor Pattern
+/*  Adapter Pattern
  *
  *  Convert the interface of a class into another interface
  *  clients expect. Adapter lets classes work together that
@@ -6,8 +6,8 @@
  *
  */
 
-#ifndef ADAPTOR_H_
-#define ADAPTOR_H_
+#ifndef ADAPTER_H_
+#define ADAPTER_H_
 
 #include <iostream>
 using namespace std;
@@ -16,7 +16,7 @@ using namespace std;
 class Target{
     public:
         Target();
-        void request();
+        virtual void request() = 0;
 };
 
 /* collaborates with objects conforming to the Target interface */
@@ -34,11 +34,12 @@ class Adaptee{
 };
 
 /* adapts the interface of Adaptee to the Target interface */
-class Adaptor: public Target{
-    pubilc:
-        Adaptor();
+class Adapter: public Target, private Adaptee
+{
+    public:
+        Adapter();
         void request();
 };
 
-#endifd
+#endif
 
