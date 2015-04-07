@@ -34,11 +34,13 @@ class ConcreteComponent: public Component
  * interface that conforms to Component's interface.
  */
 
-class Decorator
+class Decorator: public Component
 {
     public:
-        Decorator();
-        virtual void Operation() = 0;
+        Decorator(Component *c);
+        virtual void Operation();
+    private:
+        Component *component;
 };
 
 /* adds responsibilities to the component */
@@ -46,7 +48,7 @@ class Decorator
 class ConcreteDecoratorA: public Decorator
 {
     public:
-        ConcreteDecoratorA();
+        ConcreteDecoratorA(Component *c);
         void Operation();
     private:
         void AddedBehaviourA();
@@ -55,7 +57,7 @@ class ConcreteDecoratorA: public Decorator
 class ConcreteDecoratorB: public Decorator
 {
     public:
-        ConcreteDecoratorB();
+        ConcreteDecoratorB(Component *c);
         void Operation();
     private:
         void AddedBehaviourB();

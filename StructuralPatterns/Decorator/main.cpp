@@ -2,11 +2,11 @@
 
 int main()
 {
-   ConcreteDecoratorA a;
-   ConcreteDecoratorB b;
-   ConcreteComponent c;
+   ConcreteComponent comp;
+   ConcreteDecoratorA a(&comp);
+   ConcreteDecoratorB b(&comp);
+   comp.Operation();
    a.Operation();
    b.Operation();
-   c.Operation();
    return 0;
 }

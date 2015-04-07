@@ -15,11 +15,17 @@ void ConcreteComponent::Operation()
     cout << "ConcreteComponent Operation" << endl;
 }
 
-Decorator::Decorator()
+Decorator::Decorator(Component* c):component(c)
 {
 }
 
-ConcreteDecoratorA::ConcreteDecoratorA()
+void Decorator::Operation()
+{
+    component->Operation();
+}
+
+ConcreteDecoratorA::ConcreteDecoratorA(Component *c)
+:Decorator(c)
 {
 }
 
@@ -34,7 +40,8 @@ void ConcreteDecoratorA::AddedBehaviourA()
     cout << "ConcreteDecoratorA AddedBehaviourA" << endl;
 }
 
-ConcreteDecoratorB::ConcreteDecoratorB()
+ConcreteDecoratorB::ConcreteDecoratorB(Component *c)
+:Decorator(c)
 {
 }
 
